@@ -1,0 +1,33 @@
+
+.footer {
+    padding-bottom: 50px;
+}
+
+.footer-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: var(--padding-inline);
+    
+}
+
+.footer-contacts-title {
+    text-transform: uppercase;
+}
+
+.footer-soc1als-list {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-schedule-item {
+    display: flex;
+    gap: 40px;
+}
+
+.footer .title-small:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.footer-contacts-list:not(:last-child) {
+    margin-bottom: 20px;
+}

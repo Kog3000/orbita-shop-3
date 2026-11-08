@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <title>Каталог</title>
+</head>
+<body>
+    <header class="header">
+
+        <a href="#" class="header-logo">
+            Орбита
+        </a>
+
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNavigation" aria-label="Открыть меню">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="header-menu">
+            <ul class="header-menu-list">
+                <li>
+                    <a href="./index.html" class="header-menu-link title-small">Главная</a>
+                </li>
+
+                <li>
+                    <a href="./about.html" class="header-menu-link title-small">О нас</a>
+                </li>
+
+                <li>
+                    <a href="./catalog.html" class="header-menu-link title-small underlined">Каталог</a>
+                </li>
+
+                <li>
+                    <a href="./contacts.html" class="header-menu-link title-small">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="mobile-navigation" tabindex="-1" id="mobileNavigation" aria-labelledby="mobileNavigationLabel">
+            <div class="mobile-navigation-header">
+                <a href="./index.html" class="header-logo" id="mobileNavigationLabel">Орбита</a>
+                <button type="button" class="btn-close"  aria-label="Закрыть меню"></button>
+            </div>
+            <div class="mobile-navigation-body">
+                <nav aria-label="Мобильная навигация">
+                    <ul class="mobile-navigation-list">
+                        <li><a href="./index.html">Главная</a></li>
+                        <li><a href="./about.html">О нас</a></li>
+                        <li><a href="./catalog.html">Каталог</a></li>
+                        <li><a href="./contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="catalog-content">
+
+        <section class="catalog-header">
+            <div class="catalog-content-text content-box">
+                <p class="catalog-content-title page-title">Каталог</p>
+                <p class="catalog-content-description description page-description">
+                    Предметы, которые делают пространство теплее, ярче и уютнее. Светильники, декор и аксессуары для современного дома.
+                </p>
+            </div>
+
+            <ul class="catalog-buttons-list">
+                <li class="catalog-buttons-item">
+                    <button type="button" class="catalog-button button button-toggle">Все товары</button>
+                </li>
+
+                <li class="catalog-buttons-item">
+                    <button type="button" class="catalog-button">Настольные лампы</button>
+                </li>
+
+                <li class="catalog-buttons-item">
+                    <button type="button" class="catalog-button">Подвесные лампы</button>
+                </li>
+
+                <li class="catalog-buttons-item">
+                    <button type="button" class="catalog-button">Декор</button>
+                </li>
+
+                <li class="catalog-buttons-item">
+                    <button type="button" class="catalog-button">Аксессуары</button>
+                </li>
+            </ul>
+        </section>
+
+        <section class="catalog-products">
+            <div class="catalog-layout">
+                <aside class="catalog-sidebar" id="catalogSidebar" aria-label="Фильтры каталога">
+                    <div class="filter-heading">
+                        <h2>Фильтры</h2>
+                        <button type="button" class="filter-reset" id="resetFilters">Сбросить все</button>
+                    </div>
+                    <div class="filter-group filter-color-group">
+                        <h3>Цвет</h3>
+                        <div class="color-options" aria-label="Выбрать цвет">
+                            <label class="color-option" style="--swatch:#ff9c00"><input type="checkbox" value="Оранжевый" data-filter="color"><span></span><b>Оранжевый</b></label>
+                            <label class="color-option" style="--swatch:#ef91a5"><input type="checkbox" value="Розовый" data-filter="color"><span></span><b>Розовый</b></label>
+                            <label class="color-option" style="--swatch:#b90f16"><input type="checkbox" value="Красный" data-filter="color"><span></span><b>Красный</b></label>
+                            <label class="color-option" style="--swatch:#f4bd00"><input type="checkbox" value="Жёлтый" data-filter="color"><span></span><b>Жёлтый</b></label>
+                            <label class="color-option" style="--swatch:#8b9c16"><input type="checkbox" value="Зелёный" data-filter="color"><span></span><b>Зелёный</b></label>
+                            <label class="color-option" style="--swatch:#fff0c8"><input type="checkbox" value="Бежевый" data-filter="color"><span></span><b>Бежевый</b></label>
+                            <label class="color-option" style="--swatch:#f3e1d0"><input type="checkbox" value="Кремовый" data-filter="color"><span></span><b>Кремовый</b></label>
+                            <label class="color-option" style="--swatch:#414141"><input type="checkbox" value="Чёрный" data-filter="color"><span></span><b>Чёрный</b></label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Материал</h3>
+                        <div class="filter-checks">
+                            <label><input type="checkbox" value="Стекло" data-filter="material"> Стекло</label>
+                            <label><input type="checkbox" value="Металл" data-filter="material"> Металл</label>
+                            <label><input type="checkbox" value="Керамика" data-filter="material"> Керамика</label>
+                            <label><input type="checkbox" value="Дерево" data-filter="material"> Дерево</label>
+                            <label><input type="checkbox" value="Ткань" data-filter="material"> Ткань</label>
+                        </div>
+                    </div>
+                    <div class="filter-group filter-select-group">
+                        <label for="sizeFilter">Размер</label>
+                        <select id="sizeFilter" data-filter="size"><option value="">Любой размер</option><option value="Компактный">Компактный</option><option value="Средний">Средний</option><option value="Большой">Большой</option></select>
+                    </div>
+                    <div class="filter-group filter-select-group">
+                        <label for="roomFilter">Тип помещения</label>
+                        <select id="roomFilter" data-filter="room"><option value="">Любое помещение</option><option value="Спальня">Спальня</option><option value="Гостиная">Гостиная</option><option value="Кухня">Кухня</option><option value="Кабинет">Кабинет</option></select>
+                    </div>
+                    <div class="filter-group filter-select-group">
+                        <label for="lightFilter">Тип освещения</label>
+                        <select id="lightFilter" data-filter="light"><option value="">Любой тип</option><option value="Рассеянный">Рассеянный</option><option value="Направленный">Направленный</option><option value="Декоративный">Декоративный</option></select>
+                    </div>
+                    <div class="filter-group price-filter">
+                        <h3>Цена</h3>
+                        <div class="price-inputs">
+                            <label>от <input type="number" id="minPrice" min="0" value="1000"></label>
+                            <label>до <input type="number" id="maxPrice" min="0" value="10000"></label>
+                        </div>
+                        
+                </aside>
+
+                <div class="catalog-results">
+                    <!-- <div class="catalog-toolbar">
+                        <button type="button" class="mobile-filter-button" id="openFilters">☷ Фильтры</button>
+                        <button type="button" class="find-lamp-banner" id="openQuiz"><span class="find-lamp-star">✧</span><span><strong>Найти свой светильник</strong><small>Ответьте на 4 вопроса — подберём идеальные модели</small></span><span class="find-lamp-arrow">→</span></button>
+                        <button type="button" class="compare-button" id="compareButton">⇄ Сравнить <span id="compareCount">(0)</span></button>
+                    </div> -->
+                    <div class="catalog-results-heading"><p>Все товары <span id="productsCount">5</span></p><label>Сортировка <select id="sortProducts"><option value="popular">По популярности</option><option value="price-asc">Сначала дешевле</option><option value="price-desc">Сначала дороже</option><option value="name">По названию</option></select></label></div>
+                    <ul class="catalog-products-cards-list">
+                        <li
+                            class="catalog-products-card card"
+
+                            data-title="Аура"
+                            data-price="3 000 руб."
+                            data-category="Настольная лампа"
+                            data-description="Авторский светильник для создания уютной атмосферы."
+
+                            data-modal-main="./images/products_on_main_page/1.png"
+                            data-modal-bottom="./images/modal/5.png"
+                        data-price-value="3000" data-color="Оранжевый" data-material="Стекло" data-shape="Купол" data-size="Компактный" data-room="Спальня" data-light="Рассеянный" data-type="Настольные лампы">
+                            <img 
+                                src="./images/products_on_main_page/1.png" 
+                                alt="Оранжевая лампа"
+                                class="catalog-products-card-image card-image">
+                            
+                            <div class="catalog-products-card-body card-body">
+                                <p class="catalog-products-card-title card-title">Аура</p>
+                                <p class="catalog-products-card-price small-acsent-title card-price">3 000 руб.</p>
+                            </div>
+                        </li>
+
+                        <li 
+                            class="catalog-products-card card"
+                            
+                            data-title="Роза" data-price="3 500 руб."
+                            data-image="./images/products_on_main_page/2.png"
+                            data-alt="Розовая лампа"
+                            data-category="Настольная лампа"
+                            data-description="Авторский светильник для создания уютной атмосферы в современном интерьере."
+                            data-modal-main="./images/products_on_main_page/2.png"
+                            data-modal-bottom="./images/modal/2.png" data-price-value="3500" data-color="Розовый" data-material="Керамика" data-shape="Геометрическая" data-size="Средний" data-room="Спальня" data-light="Рассеянный" data-type="Настольные лампы">
+                            <img 
+                                src="./images/products_on_main_page/2.png" 
+                                alt="Розовая лампа"
+                                class="catalog-products-card-image card-image">
+                            
+                            <div class="catalog-products-card-body">
+                                <p class="catalog-products-card-title card-title">Роза</p>
+                                <p class="catalog-products-card-price small-acsent-title card-price">3 500 руб.</p>
+                            </div>
+                        </li>
+
+                        <li
+                        class="catalog-products-card card"
+                        data-title="Пламя" data-price="3 700 руб."
+                        data-image="./images/products_on_main_page/3.png"
+                        data-alt="Огненная лампа" data-category="Декоративная лампа"
+                        data-description="Авторский светильник для создания уютной атмосферы в современном интерьере."
+                        data-modal-main="./images/products_on_main_page/3.png"
+                        data-modal-bottom="./images/modal/3.png" data-price-value="3700" data-color="Оранжевый" data-material="Металл" data-shape="Многослойная" data-size="Средний" data-room="Гостиная" data-light="Декоративный" data-type="Декор">
+                            <img 
+                                src="./images/products_on_main_page/3.png" 
+                                alt="Огненная лампа"
+                                class="catalog-products-card-image card-image">
+                            
+                            <div class="catalog-products-card-body card-body">
+                                <p class="catalog-products-card-title card-title">Пламя</p>
+                                <p class="catalog-products-card-price small-acsent-title card-price">3 700 руб.</p>
+                            </div>
+                        </li>
+
+                        <li
+                        class="catalog-products-card card"
+                        data-title="Океания" data-price="4 000 руб."
+                        data-image="./images/products_on_main_page/4.png"
+                        data-alt="Лампа в виде океанского цветка"
+                        data-category="Настольная лампа"
+                        data-description="Авторский светильник для создания уютной атмосферы в современном интерьере."
+                        data-modal-main="./images/products_on_main_page/4.png"
+                        data-modal-bottom="./images/modal/4.png" data-price-value="4000" data-color="Розовый" data-material="Керамика" data-shape="Геометрическая" data-size="Большой" data-room="Гостиная" data-light="Декоративный" data-type="Декор">
+                            <img 
+                                src="./images/products_on_main_page/4.png" 
+                                alt="Лампа в виде океанского цветка"
+                                class="catalog-products-card-image card-image">
+                            
+                            <div class="catalog-products-card-body card-body">
+                                <p class="catalog-products-card-title card-title">Океания</p>
+                                <p class="catalog-products-card-price small-acsent-title card-price">4 000 руб.</p>
+                            </div>
+                        </li>
+
+                        <li
+                        class="catalog-products-card card"
+                        data-title="Дюна"
+                        data-price="3 000 руб."
+                        data-image="./images/catalog/1.png"
+                        data-alt="Оранжевая лампа"
+                        data-category="Настольная лампа"
+                        data-description="Авторский светильник для создания уютной атмосферы в современном интерьере."
+                        data-modal-main="./images/catalog/1.png"
+                        data-modal-bottom="./images/modal/1.png" data-price-value="4000" data-color="Оранжевый" data-material="Стекло" data-shape="Купол" data-size="Средний" data-room="Кухня" data-light="Направленный" data-type="Подвесные лампы">
+                            <img 
+                                src="./images/catalog/1.png" 
+                                alt="Оранжевая стеклянная лампа"
+                                class="catalog-products-card-image card-image">
+                            
+                            <div class="catalog-products-card-body card-body">
+                                <p class="catalog-products-card-title card-title">Дюна</p>
+                                <p class="catalog-products-card-price small-acsent-title card-price">4 000 руб.</p>
+                            </div>
+                        </li>
+
+                        
+                    </ul>
+
+                    <p class="no-products" id="noProducts" hidden>По выбранным параметрам ничего не найдено. Попробуйте изменить фильтры.</p>
+                </div>
+            </div>
+
+            <section class="lamp-builder" id="lampBuilder">
+                <div class="builder-visual"><div class="builder-lamps"><img src="./images/products_on_main_page/2.png" alt="Пример светильника" id="builderPreview"><span class="builder-glow"></span></div></div>
+                <div class="builder-content"><p class="builder-eyebrow">ВАШ ДИЗАЙН — ВАШ СВЕТ</p><h2>Создайте свой светильник</h2><p>Выбирайте форму, цвет и материал — соберите уникальную модель под ваш интерьер.</p>
+                    <div class="builder-controls">
+                        <label>Форма<select id="builderShape"><option>Купол</option><option>Геометрическая</option><option>Многослойная</option><option>Арка</option></select></label>
+                        <label>Цвет<select id="builderColor"><option value="#ef91a5">Розовый</option><option value="#ff8a00">Оранжевый</option><option value="#f7d99c">Кремовый</option><option value="#8b9c16">Оливковый</option><option value="#343434">Графитовый</option></select></label>
+                        <label>Материал<select id="builderMaterial"><option>Стекло</option><option>Керамика</option><option>Металл</option></select></label>
+                    </div>
+                    <div class="builder-bottom"><strong>Ориентировочная стоимость: <span id="builderPrice">4 500 ₽</span></strong><button type="button" class="button" id="saveBuilder">Сохранить конфигурацию <span>→</span></button></div>
+                    <p class="builder-feedback" id="builderFeedback" aria-live="polite"></p>
+                </div>
+            </section>
+
+            <div class="catalog-quiz" id="catalogQuiz" aria-hidden="true"><div class="quiz-backdrop" data-quiz-close></div><div class="quiz-dialog" role="dialog" aria-modal="true" aria-labelledby="quizTitle"><button class="quiz-close" type="button" data-quiz-close aria-label="Закрыть">×</button><p class="builder-eyebrow">ПОДБОР ORBITA</p><h2 id="quizTitle">Найдём ваш свет</h2><form id="quizForm"><label>Для какой комнаты?<select name="room"><option>Спальня</option><option>Гостиная</option><option>Кухня</option><option>Кабинет</option></select></label><label>Какое настроение ближе?<select name="mood"><option>Уютное и тёплое</option><option>Яркое и необычное</option><option>Спокойное и минималистичное</option></select></label><label>Любимый цвет<select name="color"><option>Оранжевый</option><option>Розовый</option><option>Бежевый</option><option>Зелёный</option></select></label><label>Бюджет<select name="budget"><option value="4000">До 4 000 ₽</option><option value="6000">До 6 000 ₽</option><option value="10000">До 10 000 ₽</option></select></label><button class="button" type="submit">Показать подходящие товары →</button></form></div></div>
+
+            <div class="compare-modal" id="compareModal" aria-hidden="true"><div class="compare-backdrop" data-compare-close></div><div class="compare-dialog" role="dialog" aria-modal="true"><button class="quiz-close" type="button" data-compare-close>×</button><h2>Сравнение товаров</h2><div id="compareTable"></div></div></div>
+
+            <div class="modal" id="product-modal" aria-hidden="true">
+                <div class="modal-overlay" data-modal-close></div>
+
+                <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                    <button class="modal-close" type="button" aria-label="Закрыть" data-modal-close>×</button>
+
+                    <div class="modal-gallery">
+                        <img class="modal-main-image" id="modal-main-image" src="" alt="">
+                    </div>
+
+                    <div class="modal-product">
+                        <p class="modal-category" id="modal-category">ПОДВЕСНАЯ ЛАМПА</p>
+                        <h2 class="modal-title" id="modal-title">Аура</h2>
+                        <p class="modal-price" id="modal-price">3 000 руб.</p>
+
+                        <div class="modal-divider"></div>
+
+                        <p class="modal-description" id="modal-description"></p>
+
+                        <div class="modal-buy-row">
+                            <div class="modal-quantity" aria-label="Количество">
+                                <button type="button" class="modal-quantity-button" id="modal-minus">−</button>
+                                <span id="modal-quantity">1</span>
+                                <button type="button" class="modal-quantity-button" id="modal-plus">+</button>
+                            </div>
+
+                            <button class="modal-button button" type="button">Добавить в корзину</button>
+
+                        </div>
+
+                        <div class="modal-accordions">
+                            <button class="modal-accordion" type="button">
+                                <span>Характеристики</span><span>+</span>
+                            </button>
+                            <div class="modal-accordion-content">
+                                Материал, цвет и характеристики товара уточняются в описании.
+                            </div>
+
+                            <button class="modal-accordion" type="button">
+                                <span>Размеры</span><span>+</span>
+                            </button>
+                            <div class="modal-accordion-content">
+                                Размеры зависят от выбранной модели.
+                            </div>
+
+                            <button class="modal-accordion" type="button">
+                                <span>Комплектация</span><span>+</span>
+                            </button>
+                            <div class="modal-accordion-content">
+                                Светильник и необходимые элементы комплектации.
+                            </div>
+
+                            <button class="modal-accordion" type="button">
+                                <span>Доставка и оплата</span><span>+</span>
+                            </button>
+                            <div class="modal-accordion-content">
+                                Условия доставки и оплаты можно указать здесь.
+                            </div>
+                        </div>
+                    </div>
+
+                    <img class="modal-bottom-image" id="modal-bottom-image" src="" alt="">
+                </div>
+            </div>
+
+        </section>
+        
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>

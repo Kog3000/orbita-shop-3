@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <title>Контакты</title>
+</head>
+<body>
+    <header class="header">
+
+        <a href="#" class="header-logo">
+            Орбита
+        </a>
+
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNavigation" aria-label="Открыть меню">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="header-menu">
+            <ul class="header-menu-list">
+                <li>
+                    <a href="./index.html" class="header-menu-link title-small">Главная</a>
+                </li>
+
+                <li>
+                    <a href="./about.html" class="header-menu-link title-small">О нас</a>
+                </li>
+
+                <li>
+                    <a href="./catalog.html" class="header-menu-link title-small">Каталог</a>
+                </li>
+
+                <li>
+                    <a href="./contacts.html" class="header-menu-link title-small underlined">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="mobile-navigation" tabindex="-1" id="mobileNavigation" aria-labelledby="mobileNavigationLabel">
+            <div class="mobile-navigation-header">
+                <a href="./index.html" class="header-logo" id="mobileNavigationLabel">Орбита</a>
+                <button type="button" class="btn-close"  aria-label="Закрыть меню"></button>
+            </div>
+            <div class="mobile-navigation-body">
+                <nav aria-label="Мобильная навигация">
+                    <ul class="mobile-navigation-list">
+                        <li><a href="./index.html">Главная</a></li>
+                        <li><a href="./about.html">О нас</a></li>
+                        <li><a href="./catalog.html">Каталог</a></li>
+                        <li><a href="./contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="contacts-content contacts-redesign">
+        <section class="contacts-intro">
+            <h1 class="page-title">Контакты</h1>
+            <p class="description">Свяжитесь с нами любым удобным способом —<br>мы всегда на связи и поможем с выбором.</p>
+        </section>
+        <section class="contacts-location-grid">
+            <div class="contacts-info-card">
+                <div class="contact-line"><span class="contact-icon">⌖</span><div><strong>Шоурум</strong><p>Москва, ул. Орбитная, д. 7</p><small>Ежедневно с 10:00 до 20:00</small></div></div>
+                <a class="contact-line" href="tel:+79777777777"><span class="contact-icon">⌕</span><div><strong>Телефон</strong><p>+7 977 777 77-77</p></div></a>
+                <a class="contact-line" href="mailto:orbita@orbita.ru"><span class="contact-icon">✉</span><div><strong>Email</strong><p>orbita@orbita.ru</p></div></a>
+                <div class="contact-socials"><strong>Мы в соцсетях</strong><div><a href="#" aria-label="Telegram">➤</a><a href="#" aria-label="ВКонтакте">вк</a><a href="#" aria-label="Pinterest">p</a><a href="#" aria-label="Instagram">◎</a></div></div>
+            </div>
+            <div class="contacts-map" role="img" aria-label="Схематичная карта расположения шоурума ORBITA"><div class="map-road road-one"></div><div class="map-road road-two"></div><div class="map-road road-three"></div><div class="map-park"></div><div class="map-marker"><span>●</span><strong>Шоурум ORBITA</strong></div></div>
+            <div class="contacts-interior"><img src="./images/modal/5.png" alt="Светильники ORBITA в интерьере"><a href="https://yandex.ru/maps/?text=Москва%20ул.%20Орбитная%20д.%207" target="_blank" rel="noopener">Построить маршрут <span>→</span></a></div>
+        </section>
+        <section class="contacts-help-grid">
+            <form class="contacts-message-card" id="contactsForm">
+                <h2>Напишите нам</h2>
+                <div class="contacts-form-row"><input type="text" name="name" placeholder="Имя" required><input type="email" name="email" placeholder="Email" required></div>
+                <select name="subject" required><option value="" selected disabled>Тема обращения</option><option>Вопрос о товаре</option><option>Заказ и доставка</option><option>Сотрудничество</option></select>
+                <textarea name="message" placeholder="Сообщение" required></textarea>
+                <button type="submit" class="button">Отправить сообщение <span>→</span></button>
+                <p class="form-feedback" id="contactsFeedback" aria-live="polite"></p>
+            </form>
+            <div class="contacts-faq-card"><h2>Часто задаваемые вопросы</h2>
+                <div class="faq-item"><button type="button" aria-expanded="false">Как оформить заказ?<span>+</span></button><p>Выберите понравившийся светильник, добавьте его в корзину и заполните данные для связи и доставки.</p></div>
+                <div class="faq-item"><button type="button" aria-expanded="false">Как осуществляется доставка?<span>+</span></button><p>Доставляем заказы по России. Сроки и стоимость согласуем при подтверждении заказа.</p></div>
+                <div class="faq-item"><button type="button" aria-expanded="false">Можно ли вернуть товар?<span>+</span></button><p>Условия возврата зависят от состояния товара и действующих правил. Напишите нам — поможем разобраться.</p></div>
+                <div class="faq-item"><button type="button" aria-expanded="false">Как ухаживать за светильником?<span>+</span></button><p>Отключайте светильник от сети перед уходом и используйте мягкую сухую ткань.</p></div>
+                <div class="faq-item"><button type="button" aria-expanded="false">Как подобрать лампочку?<span>+</span></button><p>Проверьте тип цоколя и максимальную мощность в характеристиках выбранной модели.</p></div>
+            </div>
+        </section>
+        
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>

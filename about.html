@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <title>О нас</title>
+</head>
+<body>
+    <header class="header">
+
+        <a href="#" class="header-logo">
+            Орбита
+        </a>
+
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNavigation" aria-label="Открыть меню">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="header-menu">
+            <ul class="header-menu-list">
+                <li>
+                    <a href="./index.html" class="header-menu-link title-small">Главная</a>
+                </li>
+
+                <li>
+                    <a href="./about.html" class="header-menu-link title-small underlined">О нас</a>
+                </li>
+
+                <li>
+                    <a href="./catalog.html" class="header-menu-link title-small">Каталог</a>
+                </li>
+
+                <li>
+                    <a href="./contacts.html" class="header-menu-link title-small">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="mobile-navigation" tabindex="-1" id="mobileNavigation" aria-labelledby="mobileNavigationLabel">
+            <div class="mobile-navigation-header">
+                <a href="./index.html" class="header-logo" id="mobileNavigationLabel">Орбита</a>
+                <button type="button" class="btn-close"  aria-label="Закрыть меню"></button>
+            </div>
+            <div class="mobile-navigation-body">
+                <nav aria-label="Мобильная навигация">
+                    <ul class="mobile-navigation-list">
+                        <li><a href="./index.html">Главная</a></li>
+                        <li><a href="./about.html">О нас</a></li>
+                        <li><a href="./catalog.html">Каталог</a></li>
+                        <li><a href="./contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="about-content">
+        <div class="about-content-text content-box">
+            <p class="about-content-title page-title">О нас</p>
+            <p class="about-content-description description page-description">
+                ОРБИТА — это авторские светильники и предметы интерьера, которые превращают дом в особенное пространство. Мы верим, что дизайн способен вдохновлять, создавать настроение и делать повседневную жизнь ярче.
+            </p>
+        </div>
+
+        <div class="about-content-images">
+            <img src="./images/about/1.png" alt="Лампа на столе" class="about-content-image">
+            <img src="./images/about/2.png" alt="Записка 'Для красивой жизни'" class="about-content-image">
+        </div>
+
+        <ul class="about-content-statistics-list">
+            <li class="about-content-statistics-item">
+                <p class="about-content-statistics-result small-acsent-title">4+</p>
+                <p class="about-content-statistics-text">года<br>на рынке</p>
+            </li>
+
+            <li class="about-content-statistics-item">
+                <p class="about-content-statistics-result small-acsent-title">2000+</p>
+                <p class="about-content-statistics-text">довольных<br>клиентов</p>
+            </li>
+
+            <li class="about-content-statistics-item">
+                <p class="about-content-statistics-result small-acsent-title">50+</p>
+                <p class="about-content-statistics-text">уникальных<br>модулей</p>
+            </li>
+
+            <li class="about-content-statistics-item">
+                <p class="about-content-statistics-result small-acsent-title">Доставка</p>
+                <p class="about-content-statistics-text">по всей<br>России</p>
+            </li>
+        </ul>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>
