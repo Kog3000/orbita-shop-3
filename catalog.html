@@ -97,23 +97,65 @@
                 <aside class="catalog-sidebar" id="catalogSidebar" aria-label="Фильтры каталога">
                     <div class="filter-heading">
                         <h2>Фильтры</h2>
-                        <button type="button" class="filter-reset" id="resetFilters">Сбросить все</button>
                     </div>
+
                     <div class="filter-group filter-color-group">
-                        <h3>Цвет</h3>
+                        <h3 class="filter-name">Цвет</h3>
+
                         <div class="color-options" aria-label="Выбрать цвет">
-                            <label class="color-option" style="--swatch:#ff9c00"><input type="checkbox" value="Оранжевый" data-filter="color"><span></span><b>Оранжевый</b></label>
-                            <label class="color-option" style="--swatch:#ef91a5"><input type="checkbox" value="Розовый" data-filter="color"><span></span><b>Розовый</b></label>
-                            <label class="color-option" style="--swatch:#b90f16"><input type="checkbox" value="Красный" data-filter="color"><span></span><b>Красный</b></label>
-                            <label class="color-option" style="--swatch:#f4bd00"><input type="checkbox" value="Жёлтый" data-filter="color"><span></span><b>Жёлтый</b></label>
-                            <label class="color-option" style="--swatch:#8b9c16"><input type="checkbox" value="Зелёный" data-filter="color"><span></span><b>Зелёный</b></label>
-                            <label class="color-option" style="--swatch:#fff0c8"><input type="checkbox" value="Бежевый" data-filter="color"><span></span><b>Бежевый</b></label>
-                            <label class="color-option" style="--swatch:#f3e1d0"><input type="checkbox" value="Кремовый" data-filter="color"><span></span><b>Кремовый</b></label>
-                            <label class="color-option" style="--swatch:#414141"><input type="checkbox" value="Чёрный" data-filter="color"><span></span><b>Чёрный</b></label>
+
+                            <label class="color-option" style="--swatch:#ff9c00">
+                                <input type="checkbox" value="Оранжевый" data-filter="color">
+                                <span></span>
+                                <b class="visually-hidden">Оранжевый</b>
+                            </label>
+
+                            <label class="color-option" style="--swatch:#ef91a5">
+                                <input type="checkbox" value="Розовый" data-filter="color">
+                                <span></span>
+                                <b class="visually-hidden">Розовый</b>
+                            </label>
+
+                            <label class="color-option" style="--swatch:#b90f16">
+                                <input type="checkbox" value="Красный" data-filter="color">
+                                <span></span>
+                                <b class="visually-hidden">Красный</b>
+                            </label>
+
+                            <label class="color-option" style="--swatch:#f4bd00">
+                                <input type="checkbox" value="Жёлтый" data-filter="color">
+                                <span></span>
+                                <b class="visually-hidden">Жёлтый</b>
+                            </label>
+
+                            <label class="color-option" style="--swatch:#8b9c16">
+                                <input type="checkbox" value="Зелёный" data-filter="color">
+                                <span></span>
+                                <b class="visually-hidden">Зелёный</b>
+                            </label>
+
+                            <label class="color-option" style="--swatch:#fff0c8">
+                                <input type="checkbox" value="Бежевый" data-filter="color">
+                                <span></span>
+                                <b class="visually-hidden">Бежевый</b>
+                            </label>
+
+                            <label class="color-option" style="--swatch:#f3e1d0">
+                                <input type="checkbox" value="Кремовый" data-filter="color">
+                                <span></span>
+                                <b class="visually-hidden">Кремовый</b>
+                            </label>
+
+                            <label class="color-option" style="--swatch:#414141">
+                                <input type="checkbox" value="Чёрный" data-filter="color">
+                                <span></span>
+                                <b class="visually-hidden">Чёрный</b>
+                            </label>
                         </div>
                     </div>
+
                     <div class="filter-group">
-                        <h3>Материал</h3>
+                        <h3 class="filter-name">Материал</h3>
                         <div class="filter-checks">
                             <label><input type="checkbox" value="Стекло" data-filter="material"> Стекло</label>
                             <label><input type="checkbox" value="Металл" data-filter="material"> Металл</label>
@@ -122,34 +164,69 @@
                             <label><input type="checkbox" value="Ткань" data-filter="material"> Ткань</label>
                         </div>
                     </div>
+
                     <div class="filter-group filter-select-group">
-                        <label for="sizeFilter">Размер</label>
-                        <select id="sizeFilter" data-filter="size"><option value="">Любой размер</option><option value="Компактный">Компактный</option><option value="Средний">Средний</option><option value="Большой">Большой</option></select>
+                        <label for="sizeFilter" class="filter-name">Размер</label>
+                        <select id="sizeFilter" data-filter="size">
+                            <option value="">Любой размер</option>
+                            <option value="Компактный">Компактный</option>
+                            <option value="Средний">Средний</option>
+                            <option value="Большой">Большой</option>
+                        </select>
                     </div>
+
                     <div class="filter-group filter-select-group">
-                        <label for="roomFilter">Тип помещения</label>
-                        <select id="roomFilter" data-filter="room"><option value="">Любое помещение</option><option value="Спальня">Спальня</option><option value="Гостиная">Гостиная</option><option value="Кухня">Кухня</option><option value="Кабинет">Кабинет</option></select>
+                        <label for="roomFilter" class="filter-name">Тип помещения</label>
+                        <select id="roomFilter" data-filter="room">
+                            <option value="">Любое помещение</option>
+                            <option value="Спальня">Спальня</option>
+                            <option value="Гостиная">Гостиная</option>
+                            <option value="Кухня">Кухня</option>
+                            <option value="Кабинет">Кабинет</option>
+                        </select>
                     </div>
+
                     <div class="filter-group filter-select-group">
-                        <label for="lightFilter">Тип освещения</label>
-                        <select id="lightFilter" data-filter="light"><option value="">Любой тип</option><option value="Рассеянный">Рассеянный</option><option value="Направленный">Направленный</option><option value="Декоративный">Декоративный</option></select>
+                        <label for="lightFilter" class="filter-name">Тип освещения</label>
+                        <select id="lightFilter" data-filter="light">
+                            <option value="">Любой тип</option>
+                            <option value="Рассеянный">Рассеянный</option>
+                            <option value="Направленный">Направленный</option>
+                            <option value="Декоративный">Декоративный</option>
+                        </select>
                     </div>
+
                     <div class="filter-group price-filter">
-                        <h3>Цена</h3>
+                        <h3 class="filter-name">Цена</h3>
+
                         <div class="price-inputs">
-                            <label>от <input type="number" id="minPrice" min="0" value="1000"></label>
-                            <label>до <input type="number" id="maxPrice" min="0" value="10000"></label>
+                            <label>от
+                                <input type="number" id="minPrice" min="0" value="1000">
+                            </label>
+
+                            <label>до
+                                <input type="number" id="maxPrice" min="0" value="10000">
+                            </label>
                         </div>
-                        
+                    </div>
+                    
+                    <button type="button" class="catalog-button filter-reset" id="resetFilters">Сбросить</button>
                 </aside>
 
                 <div class="catalog-results">
-                    <!-- <div class="catalog-toolbar">
-                        <button type="button" class="mobile-filter-button" id="openFilters">☷ Фильтры</button>
-                        <button type="button" class="find-lamp-banner" id="openQuiz"><span class="find-lamp-star">✧</span><span><strong>Найти свой светильник</strong><small>Ответьте на 4 вопроса — подберём идеальные модели</small></span><span class="find-lamp-arrow">→</span></button>
-                        <button type="button" class="compare-button" id="compareButton">⇄ Сравнить <span id="compareCount">(0)</span></button>
-                    </div> -->
-                    <div class="catalog-results-heading"><p>Все товары <span id="productsCount">5</span></p><label>Сортировка <select id="sortProducts"><option value="popular">По популярности</option><option value="price-asc">Сначала дешевле</option><option value="price-desc">Сначала дороже</option><option value="name">По названию</option></select></label></div>
+            
+                    <div class="catalog-results-heading">
+                        <p>Найдено товаров: <span id="productsCount">5</span></p>
+                        <label><span class="visually-hidden">Сортировка</span> 
+                            <select id="sortProducts">
+                                <option value="popular">По популярности</option>
+                                <option value="price-asc">Сначала дешевле</option>
+                                <option value="price-desc">Сначала дороже</option>
+                                <option value="name">По названию</option>
+                            </select>
+                        </label>
+                    </div>
+
                     <ul class="catalog-products-cards-list">
                         <li
                             class="catalog-products-card card"
@@ -329,6 +406,7 @@
         </section>
         
     </main>
+    
     <script src="./js/main.js"></script>
 </body>
 </html>

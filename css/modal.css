@@ -54,8 +54,16 @@
     height: 40px;
     border: 0;
     background: transparent;
-    font: 32px/1 Arial, sans-serif;
     cursor: pointer;
+    font-size: 40px;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.modal-close:hover {
+    opacity: 0.6;
 }
 
 .modal-gallery {
@@ -92,13 +100,12 @@
 .modal-category {
     margin: 0 0 4px;
     color: #aaa;
-    font: 14px/1.2 Arial, sans-serif;
     text-transform: uppercase;
 }
 
 .modal-title {
     margin: 0;
-    font-family: var(--font-family-acsent, 'NauryzRedKeds', Arial, sans-serif);
+    font-family: var(--font-family-acsent);
     font-size: clamp(52px, 5vw, 76px);
     line-height: .95;
     font-weight: 400;
@@ -106,7 +113,8 @@
 
 .modal-price {
     margin: 8px 0 14px;
-    font: 32px/1.1 Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 .modal-divider {
@@ -117,16 +125,14 @@
 
 .modal-description {
     max-width: 560px;
-    margin: 0 0 26px;
+    margin: 0 0 16px;
     color: #888;
-    font: 15px/1.45 Arial, sans-serif;
 }
 
 .modal-buy-row {
     display: flex;
-    flex-direction: column;
     gap: 14px;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 24px;
 }
 
@@ -152,10 +158,6 @@
     font-size: 18px;
 }
 
-#modal-quantity {
-    font: 15px/1 Arial, sans-serif;
-}
-
 .modal-favorite.is-active {
     color: var(--color-green, #BBC23F);
 }
@@ -171,7 +173,6 @@
     border-top: 1px solid #ddd;
     background: transparent;
     color: #666;
-    font: 15px Arial, sans-serif;
     text-align: left;
     cursor: pointer;
 }
@@ -184,7 +185,6 @@
     display: none;
     padding: 0 0 18px;
     color: #999;
-    font: 14px/1.45 Arial, sans-serif;
 }
 
 .modal-accordion.is-open + .modal-accordion-content {
