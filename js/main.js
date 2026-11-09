@@ -240,24 +240,67 @@ document.querySelectorAll('.mobile-menu-toggle').forEach((toggle) => {
         categoryButtons.forEach((button,index) => button.classList.toggle('button-toggle', index===0));
         applyFilters();
     });
+
+        // Mobile catalogue filters
     const sidebar = document.getElementById('catalogSidebar');
     const openFiltersButton = document.getElementById('openFilters');
-    const closeFiltersButton = document.getElementById('closeFilters');
 
-    function closeFilters() {
-        sidebar?.classList.remove('is-open');
-        openFiltersButton?.setAttribute('aria-expanded', 'false');
+    function openFilters() {
+        if (!sidebar) return;
+
+        sidebar.classList.add('is-open');
+        sidebar.setAttribute('aria-hidden', 'false');
+
+        openFiltersButton?.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
     }
 
-    openFiltersButton?.addEventListener('click', () => {
-        sidebar?.classList.add('is-open');
-        openFiltersButton.setAttribute('aria-expanded', 'true');
+    function closeFilters() {
+        if (!sidebar) return;
+
+        sidebar.classList.remove('is-open');
+        sidebar.setAttribute('aria-hidden', 'true');
+
+        openFiltersButton?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    // Открытие фильтров
+    openFiltersButton?.addEventListener('click', function(event) {
+        event.preventDefault();
+        openFilters();
     });
-    closeFiltersButton?.addEventListener('click', closeFilters);
-    document.addEventListener('keydown', event => {
-        if (event.key === 'Escape') closeFilters();
+
+    // Закрытие по крестику
+    document.addEventListener('click', function(event) {
+        const closeButton = event.target.closest(
+            '#closeFilters, .filter-close-button, [data-close-filters]'
+        );
+
+        if (closeButton) {
+            event.preventDefault();
+            event.stopPropagation();
+            closeFilters();
+        }
     });
-    applyFilters();
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeFilters();
+        }
+    });
+
+    // Закрытие при клике вне панели
+    document.addEventListener('click', function(event) {
+        if (
+            sidebar?.classList.contains('is-open') &&
+            !sidebar.contains(event.target) &&
+            !event.target.closest('#openFilters')
+        ) {
+            closeFilters();
+        }
+    });
 })();
 
 // Lamp configurator preview.
