@@ -446,7 +446,8 @@ input:not(:last-child) {
     font-size: clamp(25px, 3vw, 58px);
 }
 
-.catalog-content {
+.catalog-content,
+.contacts-content {
     padding-inline: var(--padding-inline);
     padding-bottom: 50px;
 }
@@ -955,7 +956,6 @@ input:not(:last-child) {
     background: #f5a16f;
 }
 
-.compare-button,
 .mobile-filter-button {
     border: 1px solid #dcd8d3;
     border-radius: 22px;
@@ -998,30 +998,6 @@ input:not(:last-child) {
 
 .catalog-products-card[hidden] {
     display: none !important;
-}
-
-.compare-card-button {
-    position: absolute;
-    bottom: 62px;
-    left: 10px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    padding: 5px 9px;
-    opacity: 0;
-    font-size: 10px;
-    background: #fff;
-    transition: opacity .2s;
-    cursor: pointer;
-}
-
-.catalog-products-card:hover .compare-card-button,
-.compare-card-button.is-selected {
-    opacity:1;
-}
-
-.compare-card-button.is-selected {
-    color: #fff;
-    background: #171717;
 }
 
 .no-products {
@@ -1163,10 +1139,6 @@ input:not(:last-child) {
     display: grid;
 }
 
-.contacts-redesign {
-    padding-top: 10px;
-}
-
 .contacts-intro {
     display: grid;
     grid-template-columns: 1fr .85fr;
@@ -1194,7 +1166,6 @@ input:not(:last-child) {
 
 .contacts-info-card,
 .contacts-map,
-.contacts-interior,
 .contacts-message-card,
 .contacts-faq-card {
     border: 1px solid #eee9e4;
@@ -1216,6 +1187,8 @@ input:not(:last-child) {
     align-items: flex-start;
     gap: 12px;
     color: inherit;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9e6e2;
 }
 
 .contact-icon {
@@ -1231,38 +1204,31 @@ input:not(:last-child) {
 
 .contact-line strong,
 .contact-socials strong {
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 .contact-line p,
 .contact-line small {
     display: block;
     margin: 0;
-    color: #555;
-    font-size: 11px;
-    line-height: 1.35;
+    color: var(--color-gray);
+    font-size: 16px;
 }
 
 .contact-line small {
     color: #888;
 }
 
-.contact-socials > div {
-    display: flex;
-    gap: 8px;
-    margin-top: 7px;
+.contact-socials img {
+    width: 30px;
+    aspect-ratio: 1;
 }
 
-.contact-socials a {
-    display:grid;
-    place-items:center;
-    width:27px;
-    height:27px;
-    border:1px solid #d8d4cf;
-    border-radius:50%;
-    font-weight:600;
-    font-size:11px;
+.contact-socials-list {
+    margin-top: 3px;
+    display: flex;
+    gap: 20px;
 }
 
 .contacts-map {
@@ -1299,58 +1265,15 @@ input:not(:last-child) {
     height:40px;
 }
 
-.map-road {
-    position:absolute;
-    top:50%;
-    left:-10%;
-    width:120%;
-    height:9px;
-    border:1px solid #e5e0d6;
-    background:#fff;
-    transform:rotate(-25deg);
-}
-
-.road-two {
-    top:25%;
-    transform:rotate(38deg);
-}
-
-.road-three {
-    top:78%;
-    transform:rotate(5deg);
-}
-
-.map-marker {
-    position:absolute;
-    top:48%;
-    left:50%;
-    z-index:2;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    border-radius:20px;
-    padding:7px 12px;
-    box-shadow:0 3px 12px #0002;
-    font-size:11px;
-    background:white;
-    transform:translate(-50%,-50%);
-    white-space:nowrap;
-}
-
-.map-marker span {
-    color:#d12e23;
-    font-size:20px;
-}
-
 .contacts-interior {
     position:relative;
-    min-height:215px;
 }
 
 .contacts-interior img {
     width:100%;
     height:100%;
     min-height:215px;
+    border-radius: 15px;
     object-fit:cover;
 }
 
@@ -1359,167 +1282,111 @@ input:not(:last-child) {
     right:10px;
     bottom:12px;
     left:10px;
-    border-radius:20px;
-    padding:9px 12px;
-    font-weight:600;
-    font-size:11px;
-    text-align:center;
-    background:#fff;
 }
 
-.contacts-interior > a span {
-    margin-left:8px;
+.contacts-build-map-button {
+    width: 100%;
+    background-color: var(--color-light);
+    color: var(--color-dark);
 }
 
 .contacts-help-grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-    margin-top:18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 18px;
 }
 
 .contacts-message-card,
 .contacts-faq-card {
-    padding:20px;
+    padding: 20px;
 }
 
 .contacts-message-card h2,
 .contacts-faq-card h2 {
-    margin:0 0 14px;
-    font-weight:500;
-    font-size:19px;
+    margin: 0 0 14px;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 .contacts-form-row {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:9px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
 }
 
 .contacts-message-card input,
 .contacts-message-card select,
 .contacts-message-card textarea {
-    width:100%;
-    margin:0 0 9px;
-    border:1px solid #e6e1dc;
-    border-radius:10px;
-    padding:10px 12px;
-    outline-color:#e7a17d;
-    color:#222;
-    font:inherit;
-    font-size:12px;
-    background:transparent;
+    width: 100%;
+    margin: 0 0 9px;
+    border: 1px solid #e6e1dc;
+    border-radius: 15px;
+    padding: 10px 12px;
+    outline-color: #e7a17d;
+    color: var(--color-dark);
+    font: inherit;
+    font-size: 16px;
+    background: transparent;
+}
+
+.contacts-message-card select {
+    padding: 13px 8px;
 }
 
 .contacts-message-card textarea {
-    height:72px;
-    resize:vertical;
-}
-
-.contacts-message-card .button {
-    padding:10px 16px;
-    font-size:11px;
+    height: 72px;
+    resize: vertical;
 }
 
 .form-feedback {
-    min-height:14px;
-    margin:6px 0 0;
-    color:#637b37;
-    font-size:11px;
+    min-height: 14px;
+    margin: 6px 0 0;
+    color: #637b37;
+    font-size: 18px;
 }
 
 .faq-item {
-    margin-top:7px;
-    border:1px solid #e8e3de;
-    border-radius:12px;
-    overflow:hidden;
+    margin-top: 7px;
+    border: 1px solid #e8e3de;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .faq-item button {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    width:100%;
-    border:0;
-    padding:9px 12px;
-    font:inherit;
-    font-size:12px;
-    text-align:left;
-    background:transparent;
-    cursor:pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 0;
+    padding: 9px 12px;
+    font: inherit;
+    font-size: 16px;
+    text-align: left;
+    background: transparent;
+    cursor: pointer;
 }
 
 .faq-item button span {
-    font-size:17px;
-    transition:transform .2s;
+    font-size: 18px;
+    transition: transform .2s;
 }
 
 .faq-item p {
-    display:none;
-    margin:0;
-    padding:0 12px 11px;
-    color:#777;
-    font-size:11px;
-    line-height:1.5;
+    display: none;
+    margin: 0;
+    padding: 0 12px 11px;
+    color:var(--color-gray);
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .faq-item.is-open p {
-    display:block;
+    display: block;
 }
 
 .faq-item.is-open button span {
-    transform:rotate(45deg);
-}
-
-.contacts-consult {
-    position:relative;
-    display:flex;
-    align-items:center;
-    gap:18px;
-    margin:18px 0 50px;
-    border-radius:17px;
-    padding:18px 25px;
-    overflow:hidden;
-    background:#fbe9e5;
-}
-
-.consult-icon {
-    display:grid;
-    flex:0 0 auto;
-    place-items:center;
-    width:45px;
-    height:45px;
-    border:1px solid #d8bdb3;
-    border-radius:50%;
-    font-size:22px;
-}
-
-.contacts-consult h2 {
-    margin:0 0 3px;
-    font-weight:600;
-    font-size:15px;
-}
-
-.contacts-consult p {
-    margin:0;
-    color:#777;
-    font-size:11px;
-}
-
-.contacts-consult .button {
-    z-index:1;
-    margin-left:auto;
-    padding:10px 16px;
-    font-size:11px;
-    white-space:nowrap;
-}
-
-.contacts-consult > img {
-    align-self:flex-end;
-    width:100px;
-    height:85px;
-    margin:-15px -15px -18px 0;
-    object-fit:contain;
+    transform: rotate(45deg);
 }
 
 .mobile-menu-toggle {

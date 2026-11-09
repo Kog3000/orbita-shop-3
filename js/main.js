@@ -338,6 +338,6 @@ document.querySelectorAll('.faq-item button').forEach(button => button.addEventL
 document.getElementById('contactsForm')?.addEventListener('submit', event => {
     event.preventDefault();
     const feedback = document.getElementById('contactsFeedback');
-    feedback.textContent = 'Спасибо! Ваше сообщение подготовлено. Для реальной отправки подключите обработчик формы.';
+    feedback.textContent = 'Спасибо! Ваше сообщение подготовлено.';
     event.currentTarget.reset();
 });
