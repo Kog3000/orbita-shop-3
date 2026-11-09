@@ -97,6 +97,7 @@
                 <aside class="catalog-sidebar" id="catalogSidebar" aria-label="Фильтры каталога">
                     <div class="filter-heading">
                         <h2>Фильтры</h2>
+                        <button type="button" class="filter-close-button" id="closeFilters" aria-label="Закрыть фильтры">×</button>
                     </div>
 
                     <div class="filter-group filter-color-group">
@@ -214,7 +215,16 @@
                 </aside>
 
                 <div class="catalog-results">
-            
+
+                    <button 
+                        type="button"
+                        class="catalog-button mobile-filter-button"
+                        id="openFilters"
+                        aria-controls="catalogSidebar"
+                        aria-expanded="false">
+                        Открыть фильтры
+                    </button>
+
                     <div class="catalog-results-heading">
                         <p>Найдено товаров: <span id="productsCount">5</span></p>
                         <label><span class="visually-hidden">Сортировка</span> 

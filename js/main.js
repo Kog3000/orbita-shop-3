@@ -232,16 +232,30 @@ document.querySelectorAll('.mobile-menu-toggle').forEach((toggle) => {
     document.getElementById('resetFilters')?.addEventListener('click', () => {
         checkboxes.forEach(input => input.checked = false);
         selects.forEach(select => select.value = '');
-        minPrice.value = rangeMin.value = 1000;
-        maxPrice.value = rangeMax.value = 10000;
+        if (minPrice) minPrice.value = 1000;
+        if (maxPrice) maxPrice.value = 10000;
+        if (rangeMin) rangeMin.value = 1000;
+        if (rangeMax) rangeMax.value = 10000;
         activeCategory = 'Все товары';
         categoryButtons.forEach((button,index) => button.classList.toggle('button-toggle', index===0));
         applyFilters();
     });
-    document.getElementById('openFilters')?.addEventListener('click', () => document.getElementById('catalogSidebar')?.classList.add('is-open'));
-    document.addEventListener('click', event => {
-        const sidebar = document.getElementById('catalogSidebar');
-        if (sidebar?.classList.contains('is-open') && !sidebar.contains(event.target) && !event.target.closest('#openFilters')) sidebar.classList.remove('is-open');
+    const sidebar = document.getElementById('catalogSidebar');
+    const openFiltersButton = document.getElementById('openFilters');
+    const closeFiltersButton = document.getElementById('closeFilters');
+
+    function closeFilters() {
+        sidebar?.classList.remove('is-open');
+        openFiltersButton?.setAttribute('aria-expanded', 'false');
+    }
+
+    openFiltersButton?.addEventListener('click', () => {
+        sidebar?.classList.add('is-open');
+        openFiltersButton.setAttribute('aria-expanded', 'true');
+    });
+    closeFiltersButton?.addEventListener('click', closeFilters);
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeFilters();
     });
     applyFilters();
 })();
