@@ -44,22 +44,22 @@
             </nav>
 
             <div class="mobile-navigation" tabindex="-1" id="mobileNavigation" aria-labelledby="mobileNavigationLabel">
-            <div class="mobile-navigation-header">
-                <a href="./index.html" class="header-logo" id="mobileNavigationLabel">Орбита</a>
-                <button type="button" class="btn-close"  aria-label="Закрыть меню">×</button>
+                <div class="mobile-navigation-header">
+                    <a href="./index.html" class="header-logo" id="mobileNavigationLabel">Орбита</a>
+                    <button type="button" class="btn-close"  aria-label="Закрыть меню">×</button>
+                </div>
+                <div class="mobile-navigation-body">
+                    <nav aria-label="Мобильная навигация">
+                        <ul class="mobile-navigation-list">
+                            <li><a href="./index.html">Главная</a></li>
+                            <li><a href="./about.html">О нас</a></li>
+                            <li><a href="./catalog.html">Каталог</a></li>
+                            <li><a href="./contacts.html">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="mobile-navigation-body">
-                <nav aria-label="Мобильная навигация">
-                    <ul class="mobile-navigation-list">
-                        <li><a href="./index.html">Главная</a></li>
-                        <li><a href="./about.html">О нас</a></li>
-                        <li><a href="./catalog.html">Каталог</a></li>
-                        <li><a href="./contacts.html">Контакты</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+        </header>
 
         <section class="banner">
             <div class="banner-body">
@@ -72,9 +72,11 @@
                     для особенной атмосферы в вашем доме
                 </p>
 
-                <button class="banner-button button" type="button">
-                    Смотреть каталог
-                </button>
+                <a href="./catalog.html" class="to-catalog-link">
+                    <button class="banner-button button" type="button">
+                        Смотреть каталог
+                    </button>
+                </a>
             </div>
         </section>
 
