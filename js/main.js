@@ -96,7 +96,6 @@ if (modal && cards.length) {
 }
 
 
-
 const toHeartButtons = [...document.querySelectorAll('.to-heart-button')]
 
 toHeartButtons.forEach((button) => {
@@ -107,7 +106,6 @@ toHeartButtons.forEach((button) => {
 })
 
 
-
 const catalogButtons = [...document.querySelectorAll('.catalog-buttons-item button')]
 
 catalogButtons.forEach((button) => {
@@ -115,7 +113,6 @@ catalogButtons.forEach((button) => {
         button.classList.toggle('button-toggle')
     })
 })
-
 
 
 const filterItems = document.querySelectorAll('.catalog-filters-item')
@@ -138,7 +135,6 @@ filterItems.forEach(item => {
 })
 
 
-
 document.addEventListener('click', event => {
     if (!event.target.closest('.catalog-filters-list')) {
         filterItems.forEach(item => {
@@ -148,7 +144,6 @@ document.addEventListener('click', event => {
         })
     }
 })
-
 
 
 document.querySelectorAll('.mobile-menu-toggle').forEach((toggle) => {
@@ -182,7 +177,6 @@ document.querySelectorAll('.mobile-menu-toggle').forEach((toggle) => {
         }
     });
 });
-
 
 
 (() => {
@@ -361,90 +355,7 @@ document.querySelectorAll('.mobile-menu-toggle').forEach((toggle) => {
     });
 })();
 
-// Lamp configurator preview.
-(() => {
-    const preview = document.getElementById('builderPreview');
-    if (!preview) return;
-    const shape = document.getElementById('builderShape');
-    const color = document.getElementById('builderColor');
-    const material = document.getElementById('builderMaterial');
-    const price = document.getElementById('builderPrice');
-    const feedback = document.getElementById('builderFeedback');
-    const imageByShape = {'Купол':'./images/products_on_main_page/1.png','Геометрическая':'./images/products_on_main_page/2.png','Многослойная':'./images/products_on_main_page/3.png','Арка':'./images/products_on_main_page/4.png'};
-    function update() {
-        preview.src = imageByShape[shape.value];
-        const hue = {'#ef91a5': 315, '#ff8a00': 0, '#f7d99c': 24, '#8b9c16': 68, '#343434': 0}[color.value] ?? 0;
-        const tone = color.value === '#343434' ? 'grayscale(1) brightness(.58)' : color.value === '#f7d99c' ? 'sepia(.35) saturate(.75)' : `hue-rotate(${hue}deg) saturate(1.3)`;
-        preview.style.filter = `${tone} drop-shadow(0 12px 10px #9c6b4430)`;
-        preview.style.background = 'transparent';
-        document.querySelector('.builder-glow').style.background = color.value;
-        const base = 3900 + (material.value === 'Стекло' ? 600 : material.value === 'Металл' ? 300 : 0) + (shape.value === 'Многослойная' ? 700 : 0);
-        price.textContent = base.toLocaleString('ru-RU') + ' ₽';
-        feedback.textContent = '';
-    }
-    [shape,color,material].forEach(el => el.addEventListener('change', update));
-    document.getElementById('saveBuilder')?.addEventListener('click', () => {
-        const config = `ORBITA — конфигурация светильника\nФорма: ${shape.value}\nЦвет: ${color.options[color.selectedIndex].text}\nМатериал: ${material.value}\nЦена: ${price.textContent}`;
-        try { localStorage.setItem('orbitaLampConfig', config); } catch(e) {}
-        feedback.textContent = 'Конфигурация сохранена в этом браузере.';
-    });
-    update();
-})();
 
-// Four-question lamp finder.
-(() => {
-    const modal = document.getElementById('catalogQuiz');
-    if (!modal) return;
-    const close = () => { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden','true'); };
-    document.getElementById('openQuiz')?.addEventListener('click', () => { modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false'); });
-    modal.querySelectorAll('[data-quiz-close]').forEach(el => el.addEventListener('click', close));
-    document.getElementById('quizForm')?.addEventListener('submit', event => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        const room = data.get('room');
-        const color = data.get('color');
-        const budget = Number(data.get('budget'));
-        document.querySelectorAll('.catalog-products-card').forEach(card => {
-            card.hidden = Number(card.dataset.priceValue)>budget || (card.dataset.room!==room || card.dataset.color!==color);
-        });
-        const shown = [...document.querySelectorAll('.catalog-products-card')].filter(card => !card.hidden).length;
-        document.getElementById('productsCount').textContent = shown;
-        document.getElementById('noProducts').hidden = shown !== 0;
-        close();
-        document.querySelector('.catalog-results')?.scrollIntoView({behavior:'smooth',block:'start'});
-    });
-})();
-
-// Compare selected models.
-(() => {
-    const chosen = new Set();
-    const modal = document.getElementById('compareModal');
-    if (!modal) return;
-    const update = () => {
-        document.getElementById('compareCount').textContent = `(${chosen.size})`;
-        document.querySelectorAll('.compare-card-button').forEach(button => {
-            const card = button.closest('.catalog-products-card');
-            button.classList.toggle('is-selected', chosen.has(card));
-            button.textContent = chosen.has(card) ? '✓ Выбрано' : '+ Сравнить';
-        });
-    };
-    document.querySelectorAll('.compare-card-button').forEach(button => button.addEventListener('click', event => {
-        event.stopPropagation();
-        const card = button.closest('.catalog-products-card');
-        if (chosen.has(card)) chosen.delete(card); else if (chosen.size < 3) chosen.add(card);
-        update();
-    }));
-    document.getElementById('compareButton')?.addEventListener('click', () => {
-        if (!chosen.size) { alert('Сначала выберите товары для сравнения.'); return; }
-        const rows = [...chosen].map(card => `<tr><th>${card.dataset.title}</th><td>${card.dataset.price}</td><td>${card.dataset.color}</td><td>${card.dataset.material}</td><td>${card.dataset.shape}</td></tr>`).join('');
-        document.getElementById('compareTable').innerHTML = `<table><thead><tr><th>Модель</th><th>Цена</th><th>Цвет</th><th>Материал</th><th>Форма</th></tr></thead><tbody>${rows}</tbody></table>`;
-        modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false');
-    });
-    modal.querySelectorAll('[data-compare-close]').forEach(el => el.addEventListener('click', () => { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden','true'); }));
-    update();
-})();
-
-// Contacts FAQ and front-end form confirmation.
 document.querySelectorAll('.faq-item button').forEach(button => button.addEventListener('click', () => {
     const item = button.closest('.faq-item');
     const open = item.classList.toggle('is-open');
