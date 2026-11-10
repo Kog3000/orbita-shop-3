@@ -590,6 +590,18 @@
     .catalog-sidebar .filter-heading::after {
         content: none;
     }
+
+    #applyFilters,
+    #resetFilters {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 48px;
+        box-sizing: border-box;
+        padding: 12px 16px;
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1045,11 +1057,6 @@
 
     .catalog-toolbar {
         grid-template-columns: auto 1fr;
-    }
-
-    .compare-button {
-        grid-column: 1 / -1;
-        justify-self: end;
     }
 
     .catalog-results-heading {
