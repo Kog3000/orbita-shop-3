@@ -136,6 +136,9 @@ filterItems.forEach(item => {
         }
     })
 })
+
+
+
 document.addEventListener('click', event => {
     if (!event.target.closest('.catalog-filters-list')) {
         filterItems.forEach(item => {
@@ -146,21 +149,42 @@ document.addEventListener('click', event => {
     }
 })
 
-// Responsive navigation without Bootstrap.
+
+
 document.querySelectorAll('.mobile-menu-toggle').forEach((toggle) => {
     const menu = document.getElementById('mobileNavigation');
     if (!menu) return;
+
+    const closeButton = menu.querySelector('.btn-close');
+
+    function closeMenu() {
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
     toggle.addEventListener('click', () => {
         const opened = menu.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', String(opened));
     });
-    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-        menu.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-    }));
+
+    // Закрытие по крестику
+    closeButton?.addEventListener('click', closeMenu);
+
+    // Закрытие при переходе по ссылке
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Закрытие клавишей Escape
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    });
 });
 
-// Functional catalogue filtering and sorting.
+
+
 (() => {
     const catalog = document.querySelector('.catalog-layout');
     if (!catalog) return;

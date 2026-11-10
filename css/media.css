@@ -1086,25 +1086,6 @@
         position: relative;
     }
 
-    .mobile-navigation-header .btn-close::before,
-    .mobile-navigation-header .btn-close::after {
-        content: "";
-        position: absolute;
-        top: 13px;
-        left: 2px;
-        width: 24px;
-        height: 2px;
-        background: var(--color-dark);
-    }
-
-    .mobile-navigation-header .btn-close::before {
-        transform: rotate(45deg);
-    }
-
-    .mobile-navigation-header .btn-close::after {
-        transform: rotate(-45deg);
-    }
-
     .mobile-navigation-body {
         padding: 24px var(--padding-inline);
     }
