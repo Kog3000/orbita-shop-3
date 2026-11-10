@@ -1175,3 +1175,9 @@
         font-size: 36px;
     }
 }
+
+@media (max-width: 360px) {
+    .catalog-results-heading {
+        flex-direction: column;
+    }
+}
