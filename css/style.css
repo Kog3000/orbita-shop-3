@@ -718,6 +718,10 @@ input:not(:last-child) {
     margin-bottom: 7px;
 }
 
+.filter-close-button{
+    display: none;
+}
+
 .filter-group {
     flex-direction: column;
     justify-content: start !important;
@@ -728,11 +732,19 @@ input:not(:last-child) {
     border-bottom: 1px solid #e9e6e2;
 }
 
-.filter-reset {
-    width: 100%;
+.filter-reset-button {
     color: var(--color-dark);
     background-color: transparent;
     border: 1.5px solid var(--color-dark)
+}
+
+.filter-ok-button,
+.filter-reset-button {
+    width: 100%;
+}
+
+.filter-ok-button {
+    margin-bottom: 10px;
 }
 
 .color-options {
@@ -1425,7 +1437,6 @@ input:not(:last-child) {
 }
 
 .mobile-menu-toggle {
-    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 36px;

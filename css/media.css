@@ -290,10 +290,6 @@
         margin-bottom: 0;
     }
 
-    .header-menu-icons {
-        display: none;
-    }
-
     .header-logo {
         position: relative;
         top: auto;
@@ -304,16 +300,8 @@
         margin-left: auto;
     }
 
-    .header-menu {
-        display: none !important;
-    }
-
-    .mobile-menu-toggle {
-        display: block !important;
-    }
-
     .mobile-navigation {
-        display: block !important;
+        display: block;
         position: fixed;
         inset: 0;
         width: 100%;
@@ -447,22 +435,8 @@
         font-size: 22px;
     }
 
-    .compare-button {
-        padding: 10px;
-        font-size: 0;
-    }
-
-    .compare-button span {
-        font-size: 11px;
-    }
-
     .catalog-products-cards-list {
         gap: 16px;
-    }
-
-    .compare-card-button {
-        bottom: 55px;
-        opacity: 1;
     }
 
     .lamp-builder {
@@ -542,8 +516,12 @@
         display: none;
     }
 
+    .header-menu {
+        display: none !important;
+    }
+
     .mobile-menu-toggle {
-        display: block;
+        display: inline-flex;
     }
 
     .header-menu-icons {

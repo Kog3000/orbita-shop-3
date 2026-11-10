@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/media.css">
-    <title>Каталог</title>
+    <title>ОРБИТА - Каталог</title>
 </head>
 <body>
     <header class="header">
@@ -49,7 +49,7 @@
         <div class="mobile-navigation" tabindex="-1" id="mobileNavigation" aria-labelledby="mobileNavigationLabel">
             <div class="mobile-navigation-header">
                 <a href="./index.html" class="header-logo" id="mobileNavigationLabel">Орбита</a>
-                <button type="button" class="btn-close"  aria-label="Закрыть меню"></button>
+                <button type="button" class="btn-close"  aria-label="Закрыть меню">×</button>
             </div>
             <div class="mobile-navigation-body">
                 <nav aria-label="Мобильная навигация">
@@ -222,7 +222,13 @@
                         </div>
                     </div>
                     
-                    <button type="button" class="catalog-button filter-reset" id="resetFilters">Сбросить</button>
+                    <button type="button" id="applyFilters" class="button filter-ok-button">
+                        Применить
+                    </button>
+
+                    <button type="button" class="catalog-button filter-reset-button" id="resetFilters">
+                        Сбросить
+                    </button>
                 </aside>
 
                 <div class="catalog-results">

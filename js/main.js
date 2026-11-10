@@ -237,16 +237,41 @@ document.querySelectorAll('.mobile-menu-toggle').forEach((toggle) => {
         });
         sorted.forEach(card => list.appendChild(card));
     }
-    checkboxes.forEach(input => input.addEventListener('change', applyFilters));
-    selects.forEach(select => select.addEventListener('change', applyFilters));
-    [minPrice,maxPrice].forEach(input => input?.addEventListener('input', () => {
-        if (input === minPrice && rangeMin) rangeMin.value = Math.min(Number(input.value)||0, Number(rangeMax?.value||10000));
-        if (input === maxPrice && rangeMax) rangeMax.value = Math.max(Number(input.value)||0, Number(rangeMin?.value||0));
-        applyFilters();
+
+    [minPrice, maxPrice].forEach(input => input?.addEventListener('input', () => {
+        if (input === minPrice && rangeMin) {
+            rangeMin.value = Math.min(
+                Number(input.value) || 0,
+                Number(rangeMax?.value || 10000)
+            );
+        }
+
+        if (input === maxPrice && rangeMax) {
+            rangeMax.value = Math.max(
+                Number(input.value) || 0,
+                Number(rangeMin?.value || 0)
+            );
+        }
     }));
-    rangeMin?.addEventListener('input', () => { if (Number(rangeMin.value)>Number(rangeMax.value)) rangeMax.value=rangeMin.value; minPrice.value=rangeMin.value; applyFilters(); });
-    rangeMax?.addEventListener('input', () => { if (Number(rangeMax.value)<Number(rangeMin.value)) rangeMin.value=rangeMax.value; maxPrice.value=rangeMax.value; applyFilters(); });
+
+    rangeMin?.addEventListener('input', () => {
+        if (Number(rangeMin.value) > Number(rangeMax?.value || 10000)) {
+            rangeMax.value = rangeMin.value;
+        }
+
+        if (minPrice) minPrice.value = rangeMin.value;
+    });
+
+    rangeMax?.addEventListener('input', () => {
+        if (Number(rangeMax.value) < Number(rangeMin?.value || 0)) {
+            rangeMin.value = rangeMax.value;
+        }
+
+        if (maxPrice) maxPrice.value = rangeMax.value;
+    });
+
     sort?.addEventListener('change', sortCards);
+    
     categoryButtons.forEach(button => button.addEventListener('click', () => {
         categoryButtons.forEach(item => item.classList.remove('button-toggle'));
         button.classList.add('button-toggle');
@@ -265,9 +290,18 @@ document.querySelectorAll('.mobile-menu-toggle').forEach((toggle) => {
         applyFilters();
     });
 
-        // Mobile catalogue filters
     const sidebar = document.getElementById('catalogSidebar');
     const openFiltersButton = document.getElementById('openFilters');
+
+    const applyFiltersButton = document.getElementById('applyFilters');
+
+    applyFiltersButton?.addEventListener('click', () => {
+        applyFilters();
+
+        sidebar?.classList.remove('is-open');
+        openFiltersButton?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    });
 
     function openFilters() {
         if (!sidebar) return;
