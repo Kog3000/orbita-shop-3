@@ -23,6 +23,7 @@
     const count = document.getElementById('productsCount');
     const empty = document.getElementById('noProducts');
     const sort = document.getElementById('sortProducts');
+    const searchInput = document.getElementById('searchProducts');
 
     const categoryButtons = [
         ...document.querySelectorAll('.catalog-buttons-item button')
@@ -108,10 +109,19 @@
         const min = Math.max(0, Number(minPrice?.value || 0));
         const max = Math.max(min, Number(maxPrice?.value || 10000));
 
+        const searchValue = searchInput?.value
+            .trim()
+            .toLowerCase() || '';
+
         let visible = 0;
 
         cards.forEach(card => {
             const data = card.dataset;
+
+            const productName = (data.title || '').toLowerCase();
+
+            const matchesSearch = productName.includes(searchValue);
+
             const groups = ['color', 'material', 'shape'];
 
             const matchesChecks = groups.every(key => {
@@ -136,7 +146,8 @@
                 matchesChecks &&
                 matchesSelects &&
                 matchesPrice &&
-                matchesCategory;
+                matchesCategory &&
+                matchesSearch;
 
             card.hidden = !show;
 
@@ -186,6 +197,9 @@
 
     // Сортировка
     sort?.addEventListener('change', sortCards);
+
+    // Поиск товаров по названию
+    searchInput?.addEventListener('input', applyFilters);
 
     // Выбор категории
     categoryButtons.forEach(button => {

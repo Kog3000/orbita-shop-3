@@ -244,15 +244,33 @@
                     </button>
 
                     <div class="catalog-results-heading">
-                        <p>Найдено товаров: <span id="productsCount">5</span></p>
-                        <label><span class="visually-hidden">Сортировка</span> 
-                            <select id="sortProducts">
-                                <option value="popular">По популярности</option>
-                                <option value="price-asc">Сначала дешевле</option>
-                                <option value="price-desc">Сначала дороже</option>
-                                <option value="name">По названию</option>
-                            </select>
-                        </label>
+
+                        <input
+                            type="text"
+                            id="searchProducts"
+                            class="search-products-input"
+                            placeholder="Найти товар"
+                            aria-label="Поиск товаров"
+                        >
+
+                        <div class="catalog-results-controls">
+
+                            <p class="search-products-result">
+                                Найдено товаров: <span id="productsCount">5</span>
+                            </p>
+
+                            <label>
+                                <span class="visually-hidden">Сортировка</span>
+                                <select id="sortProducts">
+                                    <option value="popular">По популярности</option>
+                                    <option value="price-asc">Сначала дешевле</option>
+                                    <option value="price-desc">Сначала дороже</option>
+                                    <option value="name">По названию</option>
+                                </select>
+                            </label>
+
+                        </div>
+
                     </div>
 
                     <ul class="catalog-products-cards-list">
