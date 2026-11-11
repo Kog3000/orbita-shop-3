@@ -100,10 +100,6 @@
         background-color 0.2s ease;
 }
 
-.contacts-form-input:not(:last-child) {
-    margin-bottom: 15px;
-}
-
 .contacts-form-input::placeholder {
     color: rgba(21, 21, 21, 0.45);
 }
@@ -318,38 +314,106 @@
 
 .contacts-message-card h2,
 .contacts-faq-card h2 {
-    margin: 0 0 14px;
+    margin: 0 0 4px;
     font-weight: 700;
     font-size: 18px;
 }
 
 .contacts-form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 9px;
+    display: flex;
+    gap: 12px;
+}
+
+.contacts-form-field {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+/* Ошибка непосредственно под полем */
+.contacts-form-error {
+    display: block;
+    margin: 0;
+    color: #e53935;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+/* Поле с ошибкой */
+.contacts-message-card .is-invalid {
+    border-color: #e53935 !important;
+}
+
+.contacts-message-card button[type="submit"] {
+    align-self: flex-start;
+    margin-top: 2px;
+}
+
+/* Общее сообщение об ошибке */
+.form-feedback {
+    min-height: 0;
+    margin: 0;
+    color: #e53935;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.form-feedback:empty {
+    display: none;
+}
+
+.form-feedback.is-success {
+    color: #548b45;
+}
+
+.contacts-form-input.is-invalid,
+.contacts-form-textarea.is-invalid {
+    border: 1px solid #c62828;
 }
 
 .contacts-message-card input,
 .contacts-message-card select,
 .contacts-message-card textarea {
+    box-sizing: border-box;
+    display: block;
     width: 100%;
-    margin: 0 0 9px;
+    min-height: 54px;
+    margin: 0;
     border: 1px solid #e6e1dc;
     border-radius: 15px;
-    padding: 10px 12px;
-    outline-color: #e7a17d;
+    padding: 12px 15px;
+    outline: none;
+
     color: var(--color-dark);
     font: inherit;
     font-size: 16px;
     background: transparent;
+
+    transition: border-color 0.2s ease;
+}
+
+.contacts-message-card input:focus,
+.contacts-message-card select:focus,
+.contacts-message-card textarea:focus {
+    border-color: #e7a17d;
+}
+
+.contacts-message-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
 }
 
 .contacts-message-card select {
     padding: 13px 8px;
+    cursor: pointer;
 }
 
 .contacts-message-card textarea {
-    height: 72px;
+    height: 90px;
     resize: vertical;
 }
 

@@ -158,18 +158,27 @@
                 <h2>Напишите нам</h2>
 
                 <div class="contacts-form-row">
-                    <input type="text" name="name" placeholder="Имя" required>
-                    <input type="email" name="email" placeholder="Email" required>
+                    <div class="contacts-form-field">
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                    </div>
+
+                    <div class="contacts-form-field">
+                        <input type="email" name="email" placeholder="Ваш email" required>
+                    </div>
                 </div>
 
-                <select name="subject" required>
-                    <option value="" selected disabled>Тема обращения</option>
-                    <option>Вопрос о товаре</option>
-                    <option>Заказ и доставка</option>
-                    <option>Сотрудничество</option>
-                </select>
+                <div class="contacts-form-field">
+                    <select name="subject" required>
+                        <option value="" selected disabled>Тема обращения</option>
+                        <option>Вопрос о товаре</option>
+                        <option>Заказ и доставка</option>
+                        <option>Сотрудничество</option>
+                    </select>
+                </div>
 
-                <textarea name="message" placeholder="Сообщение" required></textarea>
+                <div class="contacts-form-field">
+                    <textarea name="message" placeholder="Сообщение" required></textarea>
+                </div>
 
                 <button type="submit" class="button">Отправить сообщение</button>
 
