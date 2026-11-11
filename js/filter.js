@@ -122,7 +122,7 @@
 
             const matchesSearch = productName.includes(searchValue);
 
-            const groups = ['color', 'material', 'shape'];
+            const groups = ['color', 'material'];
 
             const matchesChecks = groups.every(key => {
                 const values = selectedValues(key);
